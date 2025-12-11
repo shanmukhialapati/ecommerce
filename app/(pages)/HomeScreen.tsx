@@ -19,7 +19,6 @@ import LoginPopup from "../(authentication)/Login";
 import CategorySection from "../(pages)/CategorySection";
 import { multiCategoryData } from "../(pages)/multipleCategoryData";
 
-
 interface CategoryItem {
   id: string;
   name: string;
@@ -218,7 +217,30 @@ export default function HomeScreen() {
           data={section.products}
         />
       ))}
+      <View>
 
+      <Text style={styles.workHeading}>How it works</Text>
+      <View className="w-full h-96 mt-[50] flex flex-row justify-evenly items-center">
+      
+       <View style={styles.workBox}>
+        <Icon name="mobile" size={80} color="#ff3385" />
+        <Text className="font-bold text-xl">Open our website</Text>
+        <View className="p-5" >Choose from over 7000 products across groceries, fresh fruits & veggies, meat, pet care, beauty items & more</View>
+      </View>
+      <View style={styles.workBox}>
+        <FA5 name="cart-plus" size={50} color="#ff3385" />
+        <Text className="font-bold text-xl">Place an order</Text>
+        <View className="p-5">Add your favourite items to the cart & avail the best offers.Place the order now </View>
+      </View>
+      <View style={styles.workBox}>
+        <FA5 name="truck" size={50} color="#ff3385" />
+        <Text className="font-bold text-xl">Get fast delivery</Text>
+        <View className="p-5">Experience lighting-fast speed & get all your items delivered in 10 minutes</View>
+      </View>
+      
+      </View>
+
+      </View>
 
      
     
@@ -269,7 +291,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#eee",
-    // flex: 1,
     height: 40,
     borderRadius: 10,
     marginRight: 25,
@@ -277,19 +298,13 @@ const styles = StyleSheet.create({
   },
 
   searchInput: {
-
+    borderWidth:0,
+    borderColor:"#fff",
     flex: 1,
     marginLeft: 8,
   },
 
   iconBtn: {
-    // borderColor: "#ccc",
-    // marginRight: 15,
-    // borderWidth: 1,
-    // borderRadius: "70%",
-    // padding: 10,
-    // paddingRight: 20,
-    // paddingLeft: 20,
     marginLeft: 20,
     marginRight: 10,
     alignItems: "center",
@@ -329,5 +344,24 @@ const styles = StyleSheet.create({
     height: 500,
     width: "100%",
     padding: 10,
+  },
+  workHeading:{
+  fontSize:25,
+  fontWeight:700,
+  // margin:20,
+  marginTop:30,
+  flexDirection:"column",
+  alignSelf:"center",
+  },
+  workBox:{
+    width:300,
+    height:350,
+    justifyContent:"space-evenly",
+    backgroundColor: "#FEDAE8",
+    padding: 10,
+    borderRadius: 30,
+    alignItems: "center",
+    marginRight: 15,
+    elevation: 3,
   },
 });

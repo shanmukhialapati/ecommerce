@@ -7,12 +7,12 @@ import { multiCategoryData } from "../(pages)/multipleCategoryData";
 interface CategoryParams {
   categoryId: string;
   categoryName: string;
-  categoryLogo: string;
+  // categoryLogo: string;
 }
 
 export default function CategoriesScreen() {
   const route = useRoute<RouteProp<Record<string, CategoryParams>, string>>();
-  const { categoryId, categoryName,categoryLogo } = route.params;
+  const { categoryId, categoryName } = route.params;
 
   const category = multiCategoryData.find((c) => c.id === categoryId);
 
@@ -41,7 +41,7 @@ export default function CategoriesScreen() {
         start={{ x: 0, y: 1}}
         end={{ x: 0, y: 1}}
             >
-      <Text style={styles.heading}>{categoryLogo} {categoryName}</Text>
+      <Text style={styles.heading}> {categoryName}</Text>
 
       <View style={styles.grid}>
         {products.map((item) => (
